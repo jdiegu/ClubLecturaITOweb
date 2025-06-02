@@ -1,0 +1,12 @@
+.layout {
+    width: 100%;
+  
+    display: grid;
+    grid:
+      "main main2" auto
+      / 1fr 1fr;
+    gap: 8px;
+  }
+  
+  .main { grid-area: main; }
+  .main2 { grid-area: main2; }
