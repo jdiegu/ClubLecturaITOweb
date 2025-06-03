@@ -14,3 +14,17 @@ C:\xampp\htdocs
 
 Dentro del administrador de PHPMyAdmin selecciona crear una nueva base de datos, dirijase a la pestaña importar dentro de la cual seleccionaremos el archivo clublectura.sql que viene en los documentos previamente descargados, con esto el proyecto esta listo para su funcionamiento.
 
+**Descripción del proyecto**
+
+
+**Capturas de pantalla inicial**
+![image](https://github.com/user-attachments/assets/9af11768-fa03-48cb-8185-4f267c0eea1c)
+
+![image](https://github.com/user-attachments/assets/c86eeb09-dcc3-4441-969a-7f0122354c7b)
+
+**Integrantes del equipo**
+Carreón Núñez Jaime Arturo  
+García Antonio Abraham 
+Gutiérrez Cruz Ángel de Jesús  
+Morales Vazquez Juan Diego 
+Pateyro Cocom Omar Haziel
