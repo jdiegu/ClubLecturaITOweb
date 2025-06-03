@@ -23,8 +23,8 @@ Dentro del administrador de PHPMyAdmin selecciona crear una nueva base de datos,
 ![image](https://github.com/user-attachments/assets/c86eeb09-dcc3-4441-969a-7f0122354c7b)
 
 **Integrantes del equipo**
-Carreón Núñez Jaime Arturo  
-García Antonio Abraham 
-Gutiérrez Cruz Ángel de Jesús  
-Morales Vazquez Juan Diego 
-Pateyro Cocom Omar Haziel
+- Carreón Núñez Jaime Arturo  
+- García Antonio Abraham 
+- Gutiérrez Cruz Ángel de Jesús  
+- Morales Vazquez Juan Diego 
+- Pateyro Cocom Omar Haziel
