@@ -15,7 +15,9 @@ C:\xampp\htdocs
 Dentro del administrador de PHPMyAdmin selecciona crear una nueva base de datos, dirijase a la pestaña importar dentro de la cual seleccionaremos el archivo clublectura.sql que viene en los documentos previamente descargados, con esto el proyecto esta listo para su funcionamiento.
 
 **Descripción del proyecto**
+Proyecto realizado por estudiantes de sexto semestre de la carrera de sistemas computaciónales con el fin de aplicar los conocimientos vistos durante el semestre en la creación de de páginas wed, mediante el uso de ccs para el diseño, php para el manejo de servidores, Javascript para el comportamiento y html para uso de etiquetas.
 
+La página llevada a cabo se basa en un club de lectura, en dónde cada miembro debe poseer de manera física su libro, y así mismo poder compartir sus avances y opiniones con los demás miembros, para que de esta manera se pueda fomentar más la lectura e incluso el conocer nuevas personas con gustos similares a los nuestros.
 
 **Capturas de pantalla inicial**
 ![image](https://github.com/user-attachments/assets/9af11768-fa03-48cb-8185-4f267c0eea1c)
