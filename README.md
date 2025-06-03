@@ -1,6 +1,6 @@
 # ClubLecturaITOweb
 
-## Instrucciones de instalación y ejecución
+**Instrucciones de instalación y ejecución**
 
 Como primer requisito para el uso del sistema se necesita del programa XAMPP, en caso de no tenerlo, adjuntamos su link de descarga:
 https://www.apachefriends.org/download.html
