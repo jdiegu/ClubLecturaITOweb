@@ -8,6 +8,7 @@
   <meta name="keywords" content="Clud de lectura del TECNM" />
   <title>Club de lectura - ITO</title>
   <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <link rel="shortcut icon" href="media/logo1.png" />
 </head>
 
 <body>

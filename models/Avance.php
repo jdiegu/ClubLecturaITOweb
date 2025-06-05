@@ -169,7 +169,7 @@ class Avance
     $aAvances = array();
     $j = 0;
     if ($oAccesoDatos->conectar()) {
-      $sQuery = "SELECT * FROM avances WHERE num_control = ". $this->num_control . " AND id_libro = ". $this->id_libro;;
+      $sQuery = "SELECT * FROM avances WHERE num_control = " . $this->num_control . " AND id_libro = " . $this->id_libro . " ORDER BY id_avance DESC";      ;
       $arrRS = $oAccesoDatos->ejecutarConsulta($sQuery);
       $oAccesoDatos->desconectar();
 
@@ -192,6 +192,40 @@ class Avance
     }
 
     return $aAvances;
+  }
+
+  public function buscarAvanceMasReciente()
+  {
+    $bRet = false;
+    $oAccesoDatos = new AccesoDatos();
+    if ($this->num_control == null || $this->id_libro == null) {
+      throw new Exception("Avance->buscarAvanceMasReciente(): faltan datos");
+    }
+
+    if ($oAccesoDatos->conectar()) {
+      $sQuery = "SELECT * FROM avances
+               WHERE num_control = " . $this->num_control . "
+               AND id_libro = " . $this->id_libro . "
+               ORDER BY fecha DESC
+               LIMIT 1";
+
+      $arrRS = $oAccesoDatos->ejecutarConsulta($sQuery);
+      $oAccesoDatos->desconectar();
+
+      if ($arrRS && count($arrRS) > 0) {
+        $this->setIdAvance($arrRS[0][0]);
+        $this->setNumControl($arrRS[0][1]);
+        $this->setIdLibro($arrRS[0][2]);
+        $this->setPaginasLeidas($arrRS[0][3]);
+        $this->setComentario($arrRS[0][4]);
+        $oDate = new DateTime($arrRS[0][5]);
+        $this->setFecha($oDate->format('Y') . "-" . $oDate->format('m') . "-" . $oDate->format('d'));
+        $this->setPaginasTotales($arrRS[0][6]);
+        $bRet = true;
+      }
+    }
+
+    return $bRet;
   }
 
 

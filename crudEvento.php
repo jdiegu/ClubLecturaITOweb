@@ -81,7 +81,7 @@ if (
       $oEvento->setLugar($sLugar);
       $oEvento->setImagen($imagen);
       $nResultado = $oEvento->insertar();
-      $sMsg = "Se edito el evento con exito";
+      $sMsg = "Se inserto el evento con exito";
       echo $sMsg;
 
     }

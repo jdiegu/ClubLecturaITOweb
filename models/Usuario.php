@@ -168,5 +168,37 @@ class Usuario
     return $bRet;
   }
 
+  public function obtenerTodos()
+  {
+    $oAccesoDatos = new AccesoDatos();
+    $aUsuarios = array();
+    $sQuery = "SELECT num_control, ap_paterno, ap_materno, nombre, correo, contrasena, tipo, imagen FROM usuarios WHERE tipo <> 1";
+    $arrRS = null;
+    $j = 0;
+    if ($oAccesoDatos->conectar()) {
+      $arrRS = $oAccesoDatos->ejecutarConsulta($sQuery);
+      $oAccesoDatos->desconectar();
+
+      if ($arrRS != null) {
+        foreach ($arrRS as $fila) {
+          $oUsuario = new Usuario();
+          $oUsuario->setNumControl($fila[0]);
+          $oUsuario->setApPaterno($fila[1]);
+          $oUsuario->setApMaterno($fila[2]);
+          $oUsuario->setNombre($fila[3]);
+          $oUsuario->setCorreo($fila[4]);
+          $oUsuario->setContrasena($fila[5]);
+          $oUsuario->setTipo($fila[6]);
+          $oUsuario->setImagen($fila[7]);
+          $aUsuarios[$j] = $oUsuario;
+          $j=$j+1;
+        }
+      }
+    }
+
+    return $aUsuarios;
+  }
+
+
 }
 ?>

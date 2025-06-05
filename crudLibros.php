@@ -22,7 +22,7 @@ if (
     if ($sOpe == 'leer') {
       $oAvance->setNumControl($id);
       $oAvance->setIdLibro($sCve);
-      $oAvance->setComentario("");
+      $oAvance->setComentario("Comencé a leer este libro");
       $oAvance->setPaginasLeidas(0);
       $oAvance->setPaginasTotales(0);
 
@@ -68,7 +68,7 @@ if (
       $oLibro->setGenero($sGenero);
       $oLibro->setPortada($portada);
       $nResultado = $oLibro->insertar();
-      $sMsg = "Se edito el libro con exito";
+      $sMsg = "Se inserto el libro con exito";
       echo $sMsg;
     }
     if ($sOpe == 'eliminar') {

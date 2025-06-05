@@ -8,6 +8,7 @@
     <meta name="keywords" content="Clud de lectura del TECNM" />
     <title>Club de lectura - ITO</title>
     <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="shortcut icon" href="media/logo1.png" />
 </head>
 
 <body>
@@ -30,10 +31,13 @@
         </section>
     </main>
 
+    <script src="js/popup.js"></script>
+
     <?php
+    $redi = "login.php";
     if (isset($_REQUEST["msg"])) {
         $sMsg = $_REQUEST["msg"] ?? "";
-        echo '<script>popupMsg("' . $sMsg . '" , "login.php")</script>';
+        echo '<script>popupMsg("' . $sMsg . '","' . $redi . '")</script>';
     }
     ?>
 

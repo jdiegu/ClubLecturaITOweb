@@ -8,6 +8,7 @@
     <meta name="keywords" content="Clud de lectura del TECNM" />
     <title>Club de lectura - ITO</title>
     <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="shortcut icon" href="media/logo1.png" />
 </head>
 
 <body>
@@ -37,14 +38,16 @@
                     <input name="txtContrasena" type="password" placeholder="Contraseña" required />
                     <label>Confirmar Contrase&ntilde;a:</label>
                     <input name="txtConfirmar" type="password" placeholder="Confirmar contraseña" required />
-
+                    <div id="mensaje"> </div>
                     <br>
-                    <button class="btn-form" type="submit">Registrarse</button>
+                    <button class="btn-form" type="submit" onclick="return validaPsw();">Registrarse</button>
                     <button class="btn-form" onclick="window.location.href='index.php'" type="button">Cancelar</button>
                 </form>
             </div>
         </section>
     </main>
+
+    <script src="js/validador.js"></script>
 
     <?php
     if (isset($_REQUEST["msg"])) {

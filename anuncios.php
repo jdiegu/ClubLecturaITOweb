@@ -60,7 +60,7 @@ $nTipoUser = $_SESSION["tipo"];
                 </li>
                 <li>
                   <button type="button"
-                    onclick="popup('Seguro que quieres eliminar este anuncio' , '<?php echo $oEvento->getNombre() ?>', '<?php echo $oEvento->getDescripcion() ?>', '<?php echo $oEvento->getFecha() ?>', '<?php echo $oEvento->getHorario() ?>' , 'crudEvento.php' , '<?php echo $oEvento->getIdEvento() ?>', 'eliminar', 'null', 'Eliminar', 'null');">Eliminar</button>
+                    onclick="popup('¿Seguro que quieres eliminar este anuncio?' , '<?php echo $oEvento->getNombre() ?>', '<?php echo $oEvento->getDescripcion() ?>', '<?php echo $oEvento->getFecha() ?>', '<?php echo $oEvento->getHorario() ?>' , 'crudEvento.php' , '<?php echo $oEvento->getIdEvento() ?>', 'eliminar', 'null', 'Eliminar', 'null');">Eliminar</button>
                 </li>
               <?php } else { ?>
                 <li>

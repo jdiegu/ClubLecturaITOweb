@@ -54,6 +54,29 @@ class Estadisticas
     return $datos;
   }
 
+  public function usuariosLeyendoPorLibro()
+  {
+    $oAccesoDatos = new AccesoDatos();
+    $datos = [];
+    if ($oAccesoDatos->conectar()) {
+      $consulta = "SELECT
+                   l.nombre AS libro,
+                   COUNT(DISTINCT a.num_control) AS total_usuarios
+                 FROM libros l
+                 JOIN avances a ON l.id_libro = a.id_libro
+                 GROUP BY l.id_libro";
+      $resultado = $oAccesoDatos->ejecutarConsulta($consulta);
+      $oAccesoDatos->desconectar();
+      if ($resultado) {
+        foreach ($resultado as $fila) {
+          $datos[] = $fila;
+        }
+        return $datos;
+      }
+    }
+    return $datos;
+  }
+
 
 }
 ?>

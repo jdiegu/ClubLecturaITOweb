@@ -8,6 +8,7 @@
   <meta name="keywords" content="Clud de lectura del TECNM" />
   <title>Club de lectura - ITO</title>
   <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <link rel="shortcut icon" href="media/logo1.png" />
 </head>
 
 <body class="bodyIndex">
@@ -35,7 +36,6 @@
             <?php
             session_start();
             if (isset($_SESSION["usuario"])) { ?>
-              <li><a href="index.php">Inicio</a></li>
               <li><a href="biblioteca.php">Biblioteca</a></li>
               <li><a href="anuncios.php">Anuncios</a></li>
               <?php
@@ -56,6 +56,12 @@
               <li><a href="registrar.php">Registrarse</a></li>
 
             <?php } ?>
+          </ul>
+
+          <ul class="btn-index">
+            <li>
+              <a href="video.php">Video tutorial</a>
+            </li>
           </ul>
 
           <!-- Calendario -->

@@ -24,7 +24,7 @@ try {
     <?php if ($arrLibros != null) {
       foreach ($arrLibros as $oLib) {
         ?>
-        <li>
+        <li id="<?php echo $oLib->getIdLibro() ?>">
           <a>
             <center>
               <div class="portada">

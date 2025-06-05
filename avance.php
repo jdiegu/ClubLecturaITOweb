@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 include_once("models/Avance.php");
@@ -17,11 +16,16 @@ try {
       $oAvance->buscar();
       $sOpe = $_POST["txtOpe"];
       $bEditar = true;
-    }else{
+    } else {
       $sOpe = $_POST["txtOpe"];
       $id = $_POST["txtClave"];
+      $oAvance->setIdLibro($id);
+      $oAvance->setNumControl($_SESSION["usuario"]);
+      $oAvance->buscarAvanceMasReciente();
+      $oAvance->setComentario("");
+
     }
-    $idLibro= $_POST["id_libro"];
+    $idLibro = $_POST["id_libro"];
   }
 
 } catch (\Throwable $th) {
@@ -55,28 +59,37 @@ try {
       <input name="idLibro" value="<?php echo $idLibro ?>" type="hidden">
 
       <label for="paginas_leidas">Paginas Leidas: </label>
-      <input type="number" name="paginas_leidas" id="paginas_leidas" value="<?php echo $oAvance->getPaginasLeidas() ?>" required>
+      <input type="number" name="paginas_leidas" id="paginas_leidas" value="<?php echo $oAvance->getPaginasLeidas() ?>"
+        required>
 
       <label for="paginas_totales">Paginas Totales:</label>
-      <input type="number" name="paginas_totales" id="paginas_totales" value="<?php echo $oAvance->getPaginasTotales() ?>" required>
+      <input type="number" name="paginas_totales" id="paginas_totales"
+        value="<?php echo $oAvance->getPaginasTotales() ?>" required>
 
       <label for="comentario">Comentario:</label>
-      <textarea id="comentario" name="comentario" rows="3"><?php echo $oAvance->getComentario() ?></textarea>
+      <textarea id="comentario" name="comentario" rows="3" required><?php echo $oAvance->getComentario() ?></textarea>
+      <div id="mensaje"></div>
       <br>
 
       <?php
       if ($bEditar) {
-        echo '<button class="btn-form" type="submit" id="agregarBtn">Editar Avance</button>';
+        echo '<button class="btn-form" type="submit" onclick="return validarAvance();" id="agregarBtn">Editar Avance</button>';
+
       } else {
-        echo '<button class="btn-form" type="submit" id="agregarBtn">Agregar Avance</button>';
+        echo '<button class="btn-form" type="submit" onclick="return validarAvance();" id="agregarBtn">Agregar Avance</button>';
+
       }
       ?>
 
     </form>
-    <button class="btn-form" onclick="window.location.href='mis-libros.php'">Cancelar</button>
-
+    <?php if ($bEditar) { ?>
+      <button class="btn-form" onclick="window.location.href='mis-avances.php?id_libro=<?php echo $idLibro ?>'">Cancelar</button>
+    <?php } else { ?>
+      <button class="btn-form" onclick="window.location.href='mis-libros.php'">Cancelar</button>
+    <?php } ?>
   </section>
 
 </main>
+<script src="js/validador.js"></script>
 
 <?php include "footer.php" ?>
