@@ -151,7 +151,7 @@ class Evento
     $aEventos = array();
     $j=0;
     if ($oAccesoDatos->conectar()) {
-      $sQuery = "SELECT id_evento, nombre, descripcion, fecha, horario, lugar, imagen FROM eventos";
+      $sQuery = "SELECT id_evento, nombre, descripcion, fecha, horario, lugar, imagen FROM eventos WHERE fecha >= CURRENT_DATE() ORDER BY fecha ASC";
       $arrRS = $oAccesoDatos->ejecutarConsulta($sQuery);
       $oAccesoDatos->desconectar();
 
